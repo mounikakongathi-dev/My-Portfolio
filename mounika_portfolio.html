@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mounika Kongathi - Software Developer Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        h1 {
+            color: #2d3748;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #4a5568;
+        }
+
+        .section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            display: inline-block;
+        }
+
+        .summary {
+            font-size: 1.1em;
+            color: #4a5568;
+            line-height: 1.8;
+        }
+
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            background: #f7fafc;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .experience-item:hover, .project-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .job-title {
+            color: #2d3748;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .duration {
+            color: #718096;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .responsibilities {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .responsibilities li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            color: #4a5568;
+        }
+
+        .responsibilities li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-size: 1.2em;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 12px;
+            border-top: 4px solid #667eea;
+        }
+
+        .skill-category h3 {
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: transform 0.2s ease;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.1);
+        }
+
+        .project-title {
+            color: #2d3748;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .project-description {
+            color: #4a5568;
+            line-height: 1.8;
+        }
+
+        .education-degree {
+            color: #2d3748;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .education-school {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .tagline {
+                font-size: 1.1em;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-img">MK</div>
+            <h1>Mounika Kongathi</h1>
+            <p class="tagline">Software Developer | ReactJS Specialist</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    📍 Kurnool, AP, India
+                </div>
+                <div class="contact-item">
+                    📞 +91 8341809324
+                </div>
+                <div class="contact-item">
+                    ✉️ mounikakongathi@gmail.com
+                </div>
+            </div>
+        </header>
+
+        <div class="section">
+            <h2>Professional Summary</h2>
+            <p class="summary">
+                Highly motivated Software Developer with 1 year of professional experience in building responsive web applications using ReactJS, JavaScript, HTML, and CSS. Skilled in developing efficient, user-friendly interfaces and troubleshooting complex issues to improve functionality and performance. Adept at collaborating within team environments, managing tasks effectively, and quickly adapting to new technologies to deliver high-quality solutions.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Work Experience</h2>
+            <div class="experience-item">
+                <div class="job-title">Software Developer</div>
+                <div class="company">Mynyfy Pvt. Ltd - Hyderabad, India</div>
+                <div class="duration">October 2024 – September 2025</div>
+                <ul class="responsibilities">
+                    <li>Developed and maintained responsive web applications using ReactJS, JavaScript, HTML, and CSS</li>
+                    <li>Implemented dynamic filtering, search, and data management features to improve platform usability</li>
+                    <li>Integrated APIs and managed application state with Redux for reliable data flow</li>
+                    <li>Collaborated with cross-functional teams to troubleshoot and resolve bugs, reducing downtime</li>
+                    <li>Modernized legacy codebases with best practices and modular design for maintainability</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">ReactJS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">Material-UI</span>
+                        <span class="skill-tag">Responsive Design</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Technologies</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git/GitHub</span>
+                        <span class="skill-tag">Redux</span>
+                        <span class="skill-tag">DevOps</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Java</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend & Core</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Problem-Solving</span>
+                        <span class="skill-tag">Debugging</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Featured Projects</h2>
+            <div class="project-item">
+                <div class="project-title">E-commerce Web Application</div>
+                <div class="company">Mynyfy Pvt. Ltd</div>
+                <p class="project-description">
+                    Worked on a large-scale multi-application e-commerce platform including Brands, Resellers, Partners, and Admin support systems. Contributed primarily to the Support module, managing and maintaining all operations such as Orders, Brands, Resellers, Partners, Transactions, and Subscriptions. Implemented user-friendly dashboards, data filtering, and status management features using ReactJS, Redux, and REST APIs. Ensured seamless coordination between different roles and applications to maintain platform stability and efficiency.
+                </p>
+            </div>
+            <div class="project-item">
+                <div class="project-title">Virtual Steering Using OpenCV</div>
+                <p class="project-description">
+                    Developed a human-computer interaction system using OpenCV to control digital games with hand gestures. This innovative project demonstrates expertise in computer vision and real-time interaction systems.
+                </p>
+            </div>
+            <div class="project-item">
+                <div class="project-title">Hotel Management System</div>
+                <p class="project-description">
+                    Developed a comprehensive system to manage bookings, room availability, and customer details efficiently with a responsive UI. Streamlined hotel operations with an intuitive interface and robust backend functionality.
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Education</h2>
+            <div class="education-item">
+                <div class="education-degree">Master of Computer Science</div>
+                <div class="education-school">Sri Venkateshwara University, Tirupati</div>
+                <div class="duration">2022 – 2024</div>
+            </div>
+            <div class="education-item">
+                <div class="education-degree">Bachelor of Computer Science</div>
+                <div class="education-school">Rayalaseema University</div>
+                <div class="duration">2019 – 2022</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Certifications</h2>
+            <div class="experience-item">
+                <div class="job-title">Python Certificate</div>
+                <div class="company">Besant Technologies</div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2024 Mounika Kongathi. All rights reserved.</p>
+            <p>Languages: English, Telugu, Kannada</p>
+        </footer>
+    </div>
+</body>
+</html>
